@@ -20,10 +20,18 @@ function clear() {
 
 }
 
+
+
 $(document).ready(function(){
 	gridSize = 16;
 	makeGrid();
 	draw();
 
-	$('#clear').click(clear)
+	$('#clear').click(clear);
+	$('#changeGrid').click(function(){
+		gridSize = prompt('Enter a number to change the grid dimensions');
+		$('#canvas').empty();
+		makeGrid();
+		draw();
+	});
 })
